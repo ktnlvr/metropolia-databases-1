@@ -111,5 +111,29 @@
 
 ## Week 4
 
+1. `select country.name as "country name", airport.name as "airport name" from airport inner join country on airport.iso_country = country.iso_country where country.name = "Finland"`
+
+![](4_4_01.jpg)
+
+2. `select game.screen_name,airport.name from game inner join airport on game.location = airport.ident`
+
+![](4_4_02.jpg)
+
+3. `select game.screen_name,country.name from game
+    inner join airport on game.location = airport.ident
+    inner join country on airport.iso_country = country.iso_country;`
+
+![](4_4_03.jpg)
+
+4. `select airport.name,game.screen_name from airport left join game on airport.ident = game.location where airport.name like "%Hels%"`
+
+![](4_4_04.jpg)
+
+5. `select goal.name,game.screen_name from goal
+    left join goal_reached on goal_reached.goal_id = goal.id
+    left join game on game.id = goal_reached.game_id`
+
+![](4_4_05.png)
+
 ## Week 5
 
