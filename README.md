@@ -111,6 +111,8 @@
 
 ## Week 4
 
+### Exercises 4
+
 1. `select country.name as "country name", airport.name as "airport name" from airport inner join country on airport.iso_country = country.iso_country where country.name = "Finland"`
 
 ![](4_4_01.jpg)
@@ -134,6 +136,29 @@
     left join game on game.id = goal_reached.game_id`
 
 ![](4_4_05.png)
+
+### Exercises 5
+
+1. `select country.name from country where country.iso_country = (select
+    airport.iso_country from airport where airport.name like "Satsuma %")`
+
+![](4_5_01.png)
+
+2. `select airport.name from airport where airport.iso_country = (select country.iso_country from country where country.name = "Monaco")`
+
+![](4_5_02.png)
+
+3. `select game.screen_name from game inner join goal_reached on goal_reached.game_id = game.id where goal_reached.goal_id = (select goal.id from goal where goal.name = "CLOUDS");`
+
+![](4_5_03.png)
+
+4. `select country.name from country where country.iso_country not in (select airport.iso_country from airport)`
+
+![](4_5_04.png)
+
+5. `select goal.name from goal where goal.id not in (select goal.id from goal inner join goal_reached on goal.id = goal_reached.goal_id inner join game on goal_reached.game_id = game.id where game.screen_name = "Heini")`
+
+![](4_5_05.png)
 
 ## Week 5
 
