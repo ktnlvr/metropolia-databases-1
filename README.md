@@ -162,3 +162,44 @@
 
 ## Week 5
 
+### Exercises 6
+
+1. `select max(elevation_ft) from airport`
+
+![](5_6_01.png)
+
+2. `select continent,count(*) from airport group by continent`
+
+![](5_6_02.png)
+
+3. `select game.screen_name,count(*) from goal_reached inner join game on goal_reached.game_id = game.id group by game.screen_name`
+
+![](5_6_03.png)
+
+4. `select game.screen_name from game where game.co2_consumed = (select min(co2_consumed) from game)`
+
+![](5_6_04.png)
+
+5. `select country.name,count(*) from airport inner join country on airport.iso_country = country.iso_country group by country.iso_country order by count(*) desc`
+
+![](5_6_05.png)
+
+6. `select country.name,count(*) from airport inner join country on airport.iso_country = country.iso_country group by airport.iso_country having count(*) > 1000`
+
+![](5_6_06.png)
+
+7. `select name from airport where elevation_ft = (select max(elevation_ft) from airport)`
+
+![](5_6_07.png)
+
+8. `select name from country where iso_country = (select iso_country from airport where elevation_ft = (select max(elevation_ft) from airport))`
+
+![](5_6_08.png)
+
+9. `select count(*) from goal_reached where game_id = (select id from game where screen_name = "Vesa")`
+
+![](5_6_09.png)
+
+10. `select name from airport where latitude_deg = (select min(latitude_deg) from airport)`
+
+![](5_6_10.png)
