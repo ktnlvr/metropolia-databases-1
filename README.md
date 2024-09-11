@@ -203,3 +203,19 @@
 10. `select name from airport where latitude_deg = (select min(latitude_deg) from airport)`
 
 ![](5_6_10.png)
+
+### Exercises 7
+
+1. `update game set co2_consumed = co2_consumed + 500, location = (select ident from airport where name = "Nottingham Airport") where screen_name = "Vesa"`
+
+![](5_7_01.png)
+
+2. `goal_reached` should be deleted first
+
+3. `delete from goal_reached`
+
+![](5_7_03.png)
+
+4. `delete from game`
+
+![](5_7_04.png)
