@@ -4,11 +4,15 @@
 
 ### Exercises 1
 
+See the report!
 
+![](Report.png)
 
 ## Week 2
 
 ## Week 3
+
+See the report above.
 
 ### Exercises 2
 
